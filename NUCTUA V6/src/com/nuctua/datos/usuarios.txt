@@ -1,0 +1,3 @@
+ADMINISTRADOR|admin@nuctua.com|Admin2026*|Admin Nuctua|Administrador general
+CLIENTE|camila.rojas@correo.com|Camila2026*|Camila Rojas|300 456 7812|Calle 41 # 6-25, Barrio Centro|Montería
+CLIENTE|andres.mejia@correo.com|Andres2026*|Andrés Mejía|301 222 3344|Carrera 7 # 12-40|Bogotá
