@@ -1,0 +1,1092 @@
+.root {
+    -nuctua-crema: #FFF4E4;
+    -nuctua-papel: #FFFBF3;
+    -nuctua-oscuro: #1B1410;
+    -nuctua-naranja: #FF6A2B;
+    -nuctua-amarillo: #FFCC33;
+    -nuctua-durazno: #FFE3CC;
+    -nuctua-gris: #5A524C;
+    -nuctua-linea: #E8DCCB;
+    -fx-font-family: "Space Grotesk";
+    -fx-font-size: 14px;
+    -fx-background-color: -nuctua-crema;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.pagina {
+    -fx-background-color: -nuctua-crema;
+}
+
+.scroll-pagina, .scroll-pagina > .viewport {
+    -fx-background-color: -nuctua-crema;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pagina .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12px;
+}
+
+.scroll-pagina .scroll-bar .thumb {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 6px;
+}
+
+.scroll-pagina .scroll-bar .increment-button, .scroll-pagina .scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+}
+
+.contenido {
+    -fx-padding: 32px 64px 48px 64px;
+    -fx-spacing: 28px;
+}
+
+.barra {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-padding: 14px 48px 14px 48px;
+    -fx-spacing: 32px;
+    -fx-border-color: transparent transparent -nuctua-naranja transparent;
+    -fx-border-width: 0 0 6px 0;
+}
+
+.logo {
+    -fx-font-family: "Anton";
+    -fx-font-size: 30px;
+    -fx-text-fill: -nuctua-crema;
+}
+
+.etiqueta-admin {
+    -fx-background-color: -nuctua-naranja;
+    -fx-background-radius: 4px;
+    -fx-border-color: -nuctua-crema;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 2px 8px 2px 8px;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.enlace {
+    -fx-background-color: transparent;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-padding: 4px 2px 4px 2px;
+}
+
+.enlace:hover {
+    -fx-text-fill: -nuctua-amarillo;
+}
+
+.enlace-activo {
+    -fx-text-fill: -nuctua-naranja;
+    -fx-underline: true;
+}
+
+.contador {
+    -fx-background-color: -nuctua-crema;
+    -fx-background-radius: 9px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-alignment: center;
+}
+
+.saludo {
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-size: 13px;
+}
+
+.cinta {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-padding: 16px 0 16px 0;
+    -fx-spacing: 26px;
+    -fx-alignment: center-left;
+}
+
+.cinta-texto {
+    -fx-font-family: "Anton";
+    -fx-font-size: 22px;
+    -fx-text-fill: -nuctua-crema;
+}
+
+.cinta-punto {
+    -fx-fill: -nuctua-naranja;
+}
+
+.titulo-gigante {
+    -fx-font-family: "Anton";
+    -fx-font-size: 120px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.titulo-grande {
+    -fx-font-family: "Anton";
+    -fx-font-size: 84px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.titulo {
+    -fx-font-family: "Anton";
+    -fx-font-size: 40px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.titulo-chico {
+    -fx-font-family: "Anton";
+    -fx-font-size: 26px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.punto-naranja {
+    -fx-text-fill: -nuctua-naranja;
+}
+
+.texto-naranja {
+    -fx-text-fill: -nuctua-naranja;
+}
+
+.subtitulo {
+    -fx-font-size: 17px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.texto {
+    -fx-font-size: 14px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.texto-suave {
+    -fx-font-size: 13px;
+    -fx-text-fill: -nuctua-gris;
+}
+
+.info-orden {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-gris;
+}
+
+.etiqueta-campo {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.negrita {
+    -fx-font-weight: bold;
+}
+
+.precio {
+    -fx-font-family: "Anton";
+    -fx-font-size: 26px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.precio-grande {
+    -fx-font-family: "Anton";
+    -fx-font-size: 52px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.pastilla {
+    -fx-background-color: -nuctua-amarillo;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 4px 12px 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 3, 3);
+}
+
+.pastilla-oscura {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 999px;
+    -fx-padding: 5px 12px 5px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-crema;
+}
+
+.pastilla-naranja {
+    -fx-background-color: -nuctua-naranja;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 4px 12px 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.pastilla-borde {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 4px 12px 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.tarjeta {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 20px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2.5px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 6, 6);
+}
+
+.tarjeta-crema {
+    -fx-background-color: -nuctua-crema;
+    -fx-background-radius: 16px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 16px;
+    -fx-border-width: 2px;
+}
+
+.tarjeta-punteada {
+    -fx-background-color: -nuctua-durazno;
+    -fx-background-radius: 20px;
+    -fx-border-color: -nuctua-naranja;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2.5px;
+    -fx-border-style: segments(10, 8);
+}
+
+.hero {
+    -fx-background-color: -nuctua-naranja;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 8, 8);
+    -fx-padding: 36px 52px 36px 52px;
+}
+
+.hero-foto {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 6, 6);
+    -fx-padding: 4px;
+}
+
+.foto-marco {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 14px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 14px;
+    -fx-border-width: 2px;
+}
+
+.boton-primario {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 999px;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 13px 28px 13px 28px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #FF6A2B, 0, 1, 4, 4);
+}
+
+.boton-primario:hover {
+    -fx-background-color: #3A2A20;
+}
+
+.boton-primario:disabled {
+    -fx-opacity: 0.45;
+}
+
+.boton-secundario {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 11px 24px 11px 24px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 3, 3);
+}
+
+.boton-secundario:hover {
+    -fx-background-color: -nuctua-durazno;
+}
+
+.boton-peligro {
+    -fx-background-color: -nuctua-naranja;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 11px 24px 11px 24px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 4, 4);
+}
+
+.boton-chico {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 999px;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8px 16px 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #FF6A2B, 0, 1, 3, 3);
+}
+
+.boton-icono {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+    -fx-max-width: 38px;
+    -fx-max-height: 38px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.boton-icono-activo {
+    -fx-background-color: -nuctua-naranja;
+}
+
+.boton-barra {
+    -fx-background-color: transparent;
+    -fx-background-radius: 999px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.boton-barra-activo {
+    -fx-background-color: -nuctua-naranja;
+}
+
+.enlace-texto {
+    -fx-background-color: transparent;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-underline: true;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.campo, .campo-area .content {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 12px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 12px;
+    -fx-border-width: 2px;
+    -fx-padding: 11px 14px 11px 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-prompt-text-fill: #9A8F86;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 3, 3);
+}
+
+.campo-area {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.campo-area .content {
+    -fx-effect: null;
+}
+
+.campo:focused {
+    -fx-border-color: -nuctua-naranja;
+}
+
+.campo-error {
+    -fx-border-color: #D42A1F;
+}
+
+.buscador {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 6px 6px 6px 22px;
+    -fx-spacing: 12px;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 4, 4);
+}
+
+.buscador-campo {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-padding: 6px 0 6px 0;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-prompt-text-fill: #8A7F76;
+}
+
+.combo {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 3, 3);
+}
+
+.combo .list-cell {
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-weight: bold;
+}
+
+.combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo .arrow {
+    -fx-background-color: -nuctua-oscuro;
+}
+
+.combo-popup .list-view {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+}
+
+.combo-popup .list-cell:filled:hover, .combo-popup .list-cell:filled:selected {
+    -fx-background-color: -nuctua-durazno;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.chip {
+    -fx-background-color: -nuctua-crema;
+    -fx-background-radius: 0;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+    -fx-padding: 9px 18px 9px 18px;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-cursor: hand;
+}
+
+.chip:selected, .chip-activo {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-text-fill: -nuctua-crema;
+    -fx-effect: dropshadow(three-pass-box, #FF6A2B, 0, 1, 4, 4);
+}
+
+.talla {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 12px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 12px;
+    -fx-border-width: 2px;
+    -fx-min-width: 60px;
+    -fx-min-height: 46px;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-cursor: hand;
+}
+
+.talla:selected {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-text-fill: -nuctua-crema;
+    -fx-effect: dropshadow(three-pass-box, #FF6A2B, 0, 1, 3, 3);
+}
+
+.talla:disabled {
+    -fx-background-color: #EBE5DE;
+    -fx-text-fill: #8A7F76;
+    -fx-opacity: 1;
+    -fx-strikethrough: true;
+}
+
+.filtros {
+    -fx-padding: 22px;
+    -fx-spacing: 16px;
+}
+
+.check {
+    -fx-font-size: 14px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.check .box {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.check:selected .box {
+    -fx-background-color: -nuctua-oscuro;
+}
+
+.check:selected .mark {
+    -fx-background-color: -nuctua-crema;
+}
+
+.radio {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.radio .radio {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+    -fx-border-radius: 999px;
+}
+
+.radio:selected .dot {
+    -fx-background-color: -nuctua-oscuro;
+}
+
+.opcion-pago {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 14px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 14px;
+    -fx-border-width: 2px;
+    -fx-padding: 14px;
+    -fx-spacing: 4px;
+}
+
+.opcion-pago-activa {
+    -fx-background-color: -nuctua-durazno;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 4, 4);
+}
+
+.separador {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-min-height: 2px;
+    -fx-max-height: 2px;
+}
+
+.separador-suave {
+    -fx-background-color: -nuctua-linea;
+    -fx-min-height: 1.5px;
+    -fx-max-height: 1.5px;
+}
+
+.slider .track {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-pref-height: 4px;
+}
+
+.slider .thumb {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+    -fx-background-radius: 999px;
+    -fx-border-radius: 999px;
+}
+
+.tabla-encabezado {
+    -fx-background-color: #F2E6CF;
+    -fx-padding: 12px 18px 12px 18px;
+    -fx-background-radius: 18px 18px 0 0;
+}
+
+.tabla-encabezado .label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.fila {
+    -fx-padding: 10px 18px 10px 18px;
+    -fx-border-color: transparent transparent -nuctua-linea transparent;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+}
+
+.fila-activa {
+    -fx-background-color: -nuctua-durazno;
+}
+
+.estado-activo {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 999px;
+    -fx-padding: 4px 10px 4px 10px;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.estado-agotado {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: #D42A1F;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-text-fill: #D42A1F;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.estado-poco {
+    -fx-background-color: -nuctua-amarillo;
+    -fx-background-radius: 999px;
+    -fx-padding: 4px 10px 4px 10px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.estado-nuevo {
+    -fx-background-color: -nuctua-naranja;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.estado-entregado {
+    -fx-background-color: #DFF2E1;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.metrica {
+    -fx-padding: 16px 20px 16px 20px;
+    -fx-spacing: 2px;
+}
+
+.metrica-destacada {
+    -fx-background-color: -nuctua-durazno;
+}
+
+.metrica-valor {
+    -fx-font-family: "Anton";
+    -fx-font-size: 44px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.mensaje-error {
+    -fx-text-fill: #D42A1F;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.mensaje-ok {
+    -fx-text-fill: #1D7A3A;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.panel-login {
+    -fx-background-color: -nuctua-naranja;
+    -fx-background-radius: 26px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 26px;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 10, 10);
+    -fx-padding: 40px 44px 0 44px;
+}
+
+.titulo-login {
+    -fx-font-family: "Anton";
+    -fx-font-size: 74px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.marco-login {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 3px;
+    -fx-padding: 0 14px 0 14px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 6, 6);
+}
+
+.capa-popup {
+    -fx-background-color: rgba(27, 20, 16, 0.62);
+}
+
+.modal {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 24px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 24px;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 8, 8);
+    -fx-padding: 34px;
+    -fx-spacing: 18px;
+}
+
+.modal-titulo {
+    -fx-font-family: "Anton";
+    -fx-font-size: 38px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-text-alignment: center;
+}
+
+.opcion-lista {
+    -fx-background-color: -nuctua-papel;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+}
+
+.opcion-fila {
+    -fx-padding: 13px 20px 13px 20px;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-font-size: 15px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-alignment: center-left;
+    -fx-max-width: infinity;
+}
+
+.opcion-fila:selected {
+    -fx-background-color: -nuctua-durazno;
+    -fx-font-weight: bold;
+}
+
+.paso {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 999px;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-alignment: center;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-weight: bold;
+}
+
+.cantidad {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 3px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+}
+
+.cantidad-boton {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 1.5px;
+    -fx-min-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-width: 28px;
+    -fx-max-height: 28px;
+    -fx-padding: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.cantidad-boton-oscuro {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-text-fill: -nuctua-crema;
+}
+
+.toggle {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 14px 6px 14px;
+    -fx-cursor: hand;
+}
+
+.toggle:selected {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-text-fill: -nuctua-crema;
+}
+
+.pagina-acceso {
+    -fx-background-color: radial-gradient(center 86% 10%, radius 46%, #FFCDB2 0%, #FFE6D6 45%, #FFF4E4 100%);
+}
+
+.pie {
+    -fx-font-size: 12px;
+    -fx-text-fill: -nuctua-gris;
+}
+
+.titulo-acceso {
+    -fx-font-family: "Anton";
+    -fx-font-size: 76px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-line-spacing: -14px;
+}
+
+.columna-formulario {
+    -fx-spacing: 14px;
+    -fx-max-width: 400px;
+    -fx-pref-width: 400px;
+}
+
+.enlace-texto, .enlace-texto:focused, .enlace-texto:visited {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.tarjeta-zapato {
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.zona-foto {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 18px 18px 0 0;
+}
+
+.nombre-tarjeta {
+    -fx-font-family: "Anton";
+    -fx-font-size: 21px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.estado-disponible {
+    -fx-background-color: #DFF2E1;
+    -fx-background-radius: 999px;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.boton-chico:disabled {
+    -fx-opacity: 0.4;
+}
+
+.muestra-color {
+    -fx-background-color: transparent;
+    -fx-background-radius: 999px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 999px;
+    -fx-border-width: 3px;
+    -fx-padding: 2px;
+    -fx-cursor: hand;
+}
+
+.muestra-color:selected {
+    -fx-border-color: -nuctua-naranja;
+}
+
+.foto-detalle {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 24px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 24px;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 8, 8);
+    -fx-padding: 18px;
+}
+
+.nombre-detalle {
+    -fx-font-family: "Anton";
+    -fx-font-size: 64px;
+    -fx-line-spacing: -20px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.visto {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 18px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 18px;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 5, 5);
+    -fx-padding: 12px 18px 12px 12px;
+    -fx-spacing: 14px;
+    -fx-cursor: hand;
+}
+
+.nombre-tarjeta-texto {
+    -fx-font-family: "Anton";
+    -fx-font-size: 22px;
+    -fx-fill: -nuctua-oscuro;
+}
+
+.nombre-tarjeta-resaltado {
+    -fx-font-family: "Anton";
+    -fx-font-size: 22px;
+    -fx-fill: -nuctua-naranja;
+}
+
+.precio-tarjeta {
+    -fx-font-family: "Space Grotesk";
+    -fx-font-weight: bold;
+    -fx-font-size: 21px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.boton-agregar {
+    -fx-background-color: -nuctua-oscuro;
+    -fx-background-radius: 10px;
+    -fx-text-fill: -nuctua-crema;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 11px 18px 11px 18px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #FF6A2B, 0, 1, 4, 4);
+}
+
+.boton-agregar:hover {
+    -fx-background-color: #3A2A20;
+}
+
+.boton-agregar:disabled {
+    -fx-opacity: 0.45;
+}
+
+.chip-filtro {
+    -fx-background-color: -nuctua-amarillo;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 5px 12px 5px 14px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -nuctua-oscuro;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 2, 2);
+}
+
+.chip-filtro:hover {
+    -fx-background-color: #FFD966;
+}
+
+.tarjeta-sugerencia {
+    -fx-padding: 28px;
+    -fx-spacing: 14px;
+    -fx-alignment: center;
+}
+
+.talla:disabled {
+    -fx-background-color: #EBE5DE;
+    -fx-text-fill: #A89D94;
+    -fx-border-color: #A89D94;
+}
+
+.enlace-volver {
+    -fx-font-size: 15px;
+    -fx-graphic-text-gap: 8px;
+}
+
+.buscador-grande {
+    -fx-padding: 9px 9px 9px 30px;
+    -fx-spacing: 16px;
+    -fx-min-height: 76px;
+    -fx-effect: dropshadow(three-pass-box, #1B1410, 0, 1, 8, 8);
+}
+
+.buscador-campo-grande {
+    -fx-font-size: 24px;
+}
+
+.boton-borrar {
+    -fx-background-color: -nuctua-durazno;
+    -fx-background-radius: 999px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.boton-borrar:hover {
+    -fx-background-color: #FFD2B0;
+}
+
+.boton-buscar-grande {
+    -fx-min-width: 160px;
+    -fx-min-height: 56px;
+    -fx-font-size: 16px;
+    -fx-graphic-text-gap: 10px;
+    -fx-effect: null;
+}
+
+.etiqueta-sugerencias {
+    -fx-font-size: 13px;
+    -fx-min-width: 120px;
+    -fx-pref-width: 120px;
+}
+
+.chip-sugerencia {
+    -fx-background-color: -nuctua-papel;
+    -fx-background-radius: 999px;
+    -fx-border-color: -nuctua-oscuro;
+    -fx-border-radius: 999px;
+    -fx-border-width: 2px;
+    -fx-padding: 8px 16px 8px 16px;
+    -fx-spacing: 8px;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+}
+
+.chip-sugerencia:hover {
+    -fx-background-color: -nuctua-durazno;
+}
+
+.chip-sugerencia-texto {
+    -fx-font-size: 14px;
+    -fx-text-fill: -nuctua-oscuro;
+}
+
+.chip-sugerencia-quitar {
+    -fx-background-color: transparent;
+    -fx-padding: 2px;
+    -fx-cursor: hand;
+}
+
+.tallas-error .talla {
+    -fx-border-color: #D42A1F;
+}
+
+.tallas-error .talla:disabled {
+    -fx-border-color: #A89D94;
+}
+
+.chip-sku {
+    -fx-background-radius: 0;
+    -fx-padding: 7px 14px 7px 14px;
+}
