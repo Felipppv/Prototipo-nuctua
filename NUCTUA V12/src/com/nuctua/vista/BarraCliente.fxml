@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.nuctua.controlador.BarraClienteController" styleClass="barra" alignment="CENTER_LEFT">
+    <Label fx:id="logo" text="NUCTUA" styleClass="logo" style="-fx-cursor: hand;" onMouseClicked="#irACatalogo"/>
+    <Region HBox.hgrow="ALWAYS"/>
+    <HBox spacing="30" alignment="CENTER">
+        <Button fx:id="enlaceCatalogo" text="Catálogo" styleClass="enlace" onAction="#irACatalogo"/>
+        <Button fx:id="enlaceDeseos" text="Lista de deseos" styleClass="enlace" onAction="#irADeseos"/>
+        <Button fx:id="enlaceCarrito" text="Carrito" styleClass="enlace" onAction="#irACarrito"/>
+        <Button fx:id="enlaceHistorial" text="Historial" styleClass="enlace" onAction="#irAHistorial"/>
+        <Button fx:id="enlaceSalir" text="Cerrar sesión" styleClass="enlace" onAction="#cerrarSesion"/>
+    </HBox>
+    <Region HBox.hgrow="ALWAYS"/>
+    <HBox spacing="6" alignment="CENTER_RIGHT">
+        <Button fx:id="botonBuscar" styleClass="boton-barra" onAction="#irABuscar"/>
+        <StackPane alignment="TOP_RIGHT">
+            <Button fx:id="botonDeseos" styleClass="boton-barra" onAction="#irADeseos"/>
+            <Label fx:id="contadorDeseos" styleClass="contador" visible="false" mouseTransparent="true"/>
+        </StackPane>
+        <StackPane alignment="TOP_RIGHT">
+            <Button fx:id="botonCarrito" styleClass="boton-barra" onAction="#irACarrito"/>
+            <Label fx:id="contadorCarrito" styleClass="contador" visible="false" mouseTransparent="true"/>
+        </StackPane>
+        <Button fx:id="botonPerfil" styleClass="boton-barra" onAction="#irAPerfil"/>
+    </HBox>
+</HBox>
