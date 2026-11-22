@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.CampoContrasena?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupRecuperarContrasenaController" styleClass="capa-popup">
+    <VBox styleClass="modal" spacing="14" maxWidth="560" prefWidth="560" maxHeight="-Infinity">
+        <HBox spacing="16" alignment="CENTER_LEFT">
+            <StackPane fx:id="icono"/>
+            <Label text="RECUPERA TU CONTRASEÑA" styleClass="modal-titulo" wrapText="true" minHeight="-Infinity"/>
+        </HBox>
+        <Label text="Escribe el correo y el nombre completo con los que te registraste, y elige una contraseña nueva."
+               wrapText="true" minHeight="-Infinity" styleClass="texto"/>
+        <VBox spacing="8">
+            <Label text="CORREO ELECTRÓNICO" styleClass="etiqueta-campo"/>
+            <TextField fx:id="campoCorreo" promptText="tu@correo.com" styleClass="campo"/>
+        </VBox>
+        <VBox spacing="8">
+            <Label text="NOMBRE COMPLETO" styleClass="etiqueta-campo"/>
+            <TextField fx:id="campoNombre" promptText="Tal como lo escribiste al registrarte" styleClass="campo"/>
+        </VBox>
+        <VBox spacing="8">
+            <Label text="NUEVA CONTRASEÑA" styleClass="etiqueta-campo"/>
+            <CampoContrasena fx:id="campoNueva" prompt="Mínimo 8 caracteres, con letras y números"/>
+        </VBox>
+        <VBox spacing="8">
+            <Label text="CONFIRMAR CONTRASEÑA" styleClass="etiqueta-campo"/>
+            <CampoContrasena fx:id="campoConfirmacion" prompt="Repite la contraseña nueva"/>
+        </VBox>
+        <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+        <HBox spacing="14" alignment="CENTER_LEFT">
+            <Button fx:id="botonCambiar" text="CAMBIAR CONTRASEÑA" styleClass="boton-primario" defaultButton="true" onAction="#cambiar"/>
+            <Button text="CANCELAR" styleClass="boton-secundario" cancelButton="true" onAction="#cerrar"/>
+        </HBox>
+    </VBox>
+</StackPane>
