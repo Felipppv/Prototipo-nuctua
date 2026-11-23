@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupAgregadoCarritoController" styleClass="capa-popup">
+    <VBox styleClass="modal" alignment="CENTER" maxWidth="600" prefWidth="600" maxHeight="-Infinity">
+        <StackPane fx:id="icono"/>
+        <Label text="¡AGREGADO AL CARRITO!" styleClass="modal-titulo"/>
+        <HBox styleClass="resumen-agregado" spacing="14" alignment="CENTER_LEFT">
+            <StackPane fx:id="miniatura" styleClass="miniatura-agregado" minWidth="80" maxWidth="80" minHeight="66" maxHeight="66"/>
+            <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Label fx:id="nombre" styleClass="nombre-tarjeta" wrapText="true"/>
+                <Label fx:id="detalle" styleClass="texto"/>
+            </VBox>
+            <Label fx:id="precio" styleClass="precio-tarjeta" minWidth="-Infinity"/>
+        </HBox>
+        <Label fx:id="mensaje" styleClass="texto-agregado"/>
+        <HBox spacing="14" alignment="CENTER">
+            <Button text="VER CARRITO →" styleClass="boton-primario" defaultButton="true" onAction="#verCarrito"/>
+            <Button text="SEGUIR COMPRANDO" styleClass="boton-secundario" cancelButton="true" onAction="#cerrar"/>
+        </HBox>
+    </VBox>
+</StackPane>
