@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.vista.CampoFormulario?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupDireccionController" styleClass="capa-popup">
+    <VBox styleClass="modal" spacing="14" maxWidth="600" prefWidth="600" maxHeight="-Infinity">
+        <Label fx:id="titulo" styleClass="modal-titulo" wrapText="true" minHeight="-Infinity"/>
+        <HBox fx:id="etiquetas" spacing="10"/>
+        <CampoFormulario fx:id="campoRecibe" etiqueta="QUIÉN RECIBE" prompt="Nombre y apellido"/>
+        <CampoFormulario fx:id="campoDireccion" etiqueta="DIRECCIÓN" prompt="Ej. Calle 41 # 6-25"/>
+        <CampoFormulario fx:id="campoIndicaciones" etiqueta="BARRIO / INDICACIONES" prompt="Apto, torre, referencia"/>
+        <CampoFormulario fx:id="campoCiudad" etiqueta="CIUDAD" prompt="Montería"/>
+        <CheckBox fx:id="checkPrincipal" text="Usar como dirección principal" styleClass="check"/>
+        <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+        <HBox spacing="14" alignment="CENTER_LEFT">
+            <Button text="GUARDAR" styleClass="boton-primario" defaultButton="true" onAction="#guardar"/>
+            <Button text="CANCELAR" styleClass="boton-secundario" cancelButton="true" onAction="#cerrar"/>
+            <Button fx:id="botonEliminar" text="ELIMINAR" styleClass="boton-peligro" onAction="#eliminar"/>
+        </HBox>
+    </VBox>
+</StackPane>
