@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupFacturaController" styleClass="capa-popup">
+    <padding>
+        <Insets top="24" bottom="24" left="24" right="24"/>
+    </padding>
+    <VBox fx:id="raizModal" styleClass="modal, modal-factura" maxWidth="640" prefWidth="640" maxHeight="-Infinity" minHeight="0">
+        <HBox alignment="CENTER_LEFT" spacing="14">
+            <Label text="FACTURA" styleClass="modal-titulo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="numero" styleClass="pastilla-borde, pastilla-pedido" minWidth="-Infinity"/>
+        </HBox>
+        <Label fx:id="fecha" styleClass="texto-suave"/>
+        <ScrollPane fitToWidth="true" styleClass="scroll-factura" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" minHeight="0">
+            <VBox spacing="16" styleClass="contenido-factura">
+                <Region styleClass="separador"/>
+                <HBox spacing="24">
+                    <VBox spacing="4" HBox.hgrow="ALWAYS" prefWidth="270" minWidth="0">
+                        <Label text="CLIENTE" styleClass="etiqueta-campo"/>
+                        <Label fx:id="cliente" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                        <Label fx:id="contacto" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                    </VBox>
+                    <VBox spacing="4" HBox.hgrow="ALWAYS" prefWidth="270" minWidth="0">
+                        <Label text="ENVÍO" styleClass="etiqueta-campo"/>
+                        <Label fx:id="direccion" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                        <Label fx:id="indicaciones" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                    </VBox>
+                </HBox>
+                <VBox spacing="4">
+                    <Label text="PAGO" styleClass="etiqueta-campo"/>
+                    <Label fx:id="metodo" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <Region styleClass="separador"/>
+                <VBox fx:id="lineas" spacing="12"/>
+                <Region styleClass="separador"/>
+                <VBox fx:id="cuentas" spacing="8"/>
+            </VBox>
+        </ScrollPane>
+        <Region styleClass="separador"/>
+        <HBox alignment="CENTER_LEFT">
+            <Label text="TOTAL" styleClass="titulo-chico, titulo-total"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="total" styleClass="total-carrito" minWidth="-Infinity"/>
+        </HBox>
+        <Label text="Comprobante académico. No es una factura electrónica." styleClass="texto-suave"/>
+        <Label fx:id="mensaje" styleClass="mensaje-ok" wrapText="true" minHeight="-Infinity"/>
+        <HBox spacing="14" alignment="CENTER_LEFT">
+            <Button text="GUARDAR COPIA" styleClass="boton-primario" minWidth="-Infinity" onAction="#guardarCopia"/>
+            <Button text="CERRAR" styleClass="boton-secundario" minWidth="-Infinity" cancelButton="true" onAction="#cerrar"/>
+        </HBox>
+    </VBox>
+</StackPane>

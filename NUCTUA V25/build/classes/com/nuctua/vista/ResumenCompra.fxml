@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.nuctua.controlador.ResumenCompraController" spacing="18">
+    <HBox alignment="CENTER_LEFT">
+        <Label fx:id="etiquetaSubtotal" styleClass="fila-resumen"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="valorSubtotal" styleClass="fila-resumen, negrita"/>
+    </HBox>
+    <VBox spacing="4">
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Envío" styleClass="fila-resumen"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="valorEnvio" styleClass="fila-resumen, negrita"/>
+        </HBox>
+        <Label fx:id="notaEnvio" styleClass="aviso-carrito" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+    </VBox>
+    <HBox alignment="CENTER_LEFT">
+        <Label text="Descuento" styleClass="fila-resumen"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="valorDescuento" styleClass="fila-resumen, negrita"/>
+    </HBox>
+    <VBox spacing="10">
+        <Label text="CÓDIGO DE DESCUENTO" styleClass="etiqueta-campo"/>
+        <HBox fx:id="cajaCupon" styleClass="caja-cupon" alignment="CENTER_LEFT" spacing="10">
+            <TextField fx:id="campoCupon" promptText="Escribe tu código" styleClass="campo-cupon" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="botonCupon" text="APLICAR" styleClass="boton-cupon" minWidth="-Infinity"/>
+        </HBox>
+        <Label fx:id="mensajeCupon" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+    </VBox>
+    <Region styleClass="separador"/>
+    <HBox alignment="CENTER_LEFT">
+        <Label text="TOTAL" styleClass="titulo-chico, titulo-total"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="valorTotal" styleClass="total-carrito" minWidth="-Infinity"/>
+    </HBox>
+</VBox>

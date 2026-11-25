@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.CampoContrasena?>
+<?import com.nuctua.util.Cinta?>
+<?import com.nuctua.vista.CampoFormulario?>
+<?import com.nuctua.vista.Interruptor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminPerfilController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="6">
+                    <Label text="Administrador" styleClass="pastilla, pastilla-admin"/>
+                    <HBox alignment="BOTTOM_LEFT">
+                        <Label text="MI PERFIL" styleClass="titulo-gigante, titulo-deseos"/>
+                        <Label text="." styleClass="titulo-gigante, titulo-deseos, texto-naranja"/>
+                    </HBox>
+                    <Label text="Gestiona tu cuenta de administración y la seguridad de la tienda."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox fx:id="metricas" spacing="16"/>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox styleClass="tarjeta, tarjeta-cuenta" minWidth="290" prefWidth="380" maxWidth="380" maxHeight="-Infinity">
+                        <Label text="PERFIL" styleClass="titulo"/>
+                        <HBox spacing="16" alignment="CENTER_LEFT">
+                            <StackPane fx:id="avatar"/>
+                            <VBox spacing="5" alignment="CENTER_LEFT" minWidth="0" HBox.hgrow="ALWAYS">
+                                <Label fx:id="nombrePerfil" styleClass="nombre-perfil" wrapText="true" minHeight="-Infinity"/>
+                                <Label fx:id="correoPerfil" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                <Label text="ADMINISTRADOR" styleClass="pastilla-oscura, pastilla-estado-cuenta"/>
+                            </VBox>
+                        </HBox>
+                        <Region styleClass="separador"/>
+                        <VBox spacing="2">
+                            <Label text="ROL" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <Label fx:id="rolPerfil" styleClass="texto" wrapText="true" minHeight="-Infinity"/>
+                        </VBox>
+                        <VBox spacing="2">
+                            <Label text="TIENDA" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <Label fx:id="tiendaPerfil" styleClass="texto" wrapText="true" minHeight="-Infinity"/>
+                        </VBox>
+                        <VBox fx:id="cajaMiembro" spacing="2">
+                            <Label text="MIEMBRO DESDE" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <Label fx:id="miembroPerfil" styleClass="texto"/>
+                        </VBox>
+                        <Button text="CERRAR SESIÓN" styleClass="boton-primario" maxWidth="Infinity" onAction="#cerrarSesion"/>
+                    </VBox>
+                    <VBox spacing="24" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="876">
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="DATOS DE LA CUENTA" styleClass="titulo-chico, titulo-paso"/>
+                            <GridPane hgap="20" vgap="20">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                <CampoFormulario fx:id="campoNombre" etiqueta="NOMBRE" prompt="Tu nombre"/>
+                                <CampoFormulario fx:id="campoCorreo" etiqueta="CORREO ELECTRÓNICO" GridPane.columnIndex="1"/>
+                                <CampoFormulario fx:id="campoTelefono" etiqueta="TELÉFONO" prompt="300 456 7812" GridPane.rowIndex="1"/>
+                                <CampoFormulario fx:id="campoCiudad" etiqueta="CIUDAD" prompt="Montería, Córdoba" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </GridPane>
+                            <Label fx:id="mensajeDatos" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                            <HBox spacing="14">
+                                <Button text="GUARDAR CAMBIOS" styleClass="boton-primario" minWidth="-Infinity" onAction="#guardar"/>
+                                <Button text="CANCELAR" styleClass="boton-secundario" minWidth="-Infinity" onAction="#cancelar"/>
+                            </HBox>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="SEGURIDAD" styleClass="titulo-chico, titulo-paso"/>
+                            <GridPane hgap="20" vgap="20">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                <VBox spacing="8">
+                                    <Label text="CONTRASEÑA ACTUAL" styleClass="etiqueta-campo"/>
+                                    <CampoContrasena fx:id="campoActual" prompt="La que usas hoy"/>
+                                </VBox>
+                                <VBox spacing="8" GridPane.columnIndex="1">
+                                    <Label text="NUEVA CONTRASEÑA" styleClass="etiqueta-campo"/>
+                                    <CampoContrasena fx:id="campoNueva" prompt="Mínimo 8 caracteres"/>
+                                </VBox>
+                            </GridPane>
+                            <Label fx:id="mensajeSeguridad" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                            <HBox>
+                                <Button text="CAMBIAR CONTRASEÑA" styleClass="boton-secundario" minWidth="-Infinity" onAction="#cambiarContrasena"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Verificación en dos pasos" styleClass="texto, negrita"/>
+                                    <Label text="No disponible: necesita enviar códigos y esta tienda trabaja sin internet." styleClass="texto-suave"
+                                           wrapText="true" minHeight="-Infinity"/>
+                                </VBox>
+                                <Interruptor disable="true"/>
+                            </HBox>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="NOTIFICACIONES" styleClass="titulo-chico, titulo-paso"/>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Nuevos pedidos" styleClass="texto, negrita"/>
+                                    <Label text="Avísame cuando entre un pedido." styleClass="texto-suave"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorPedidos"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Stock bajo" styleClass="texto, negrita"/>
+                                    <Label text="Cuando un par tenga menos de 3 unidades." styleClass="texto-suave"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorStock"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Nuevos clientes" styleClass="texto, negrita"/>
+                                    <Label text="Resumen semanal de registros." styleClass="texto-suave"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorClientes"/>
+                            </HBox>
+                            <Label fx:id="mensajeAvisos" visible="false" managed="false"/>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="ACTIVIDAD RECIENTE" styleClass="titulo-chico, titulo-paso"/>
+                            <VBox fx:id="actividad"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

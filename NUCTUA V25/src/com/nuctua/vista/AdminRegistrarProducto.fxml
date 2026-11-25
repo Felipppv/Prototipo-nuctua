@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import com.nuctua.vista.CampoFormulario?>
+<?import com.nuctua.vista.Interruptor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminRegistrarProductoController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="4">
+                    <Label fx:id="sello" text="Nuevo producto" styleClass="pastilla, pastilla-admin"/>
+                    <Label fx:id="titulo" text="REGISTRAR PRODUCTO." styleClass="titulo-gigante, titulo-registrar" wrapText="true" minHeight="-Infinity"/>
+                    <Label text="Completa la ficha del par. Al guardarlo se escribe en el archivo de productos y aparece en el catálogo."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox spacing="24" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="876">
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="INFORMACIÓN GENERAL" styleClass="titulo-chico, titulo-paso"/>
+                            <GridPane hgap="16" vgap="18">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                <CampoFormulario fx:id="campoNombre" etiqueta="NOMBRE DEL MODELO" prompt="Ej. Yeezy 350 V2 Sesame"/>
+                                <CampoFormulario fx:id="campoSku" etiqueta="SKU" prompt="NCT-013" GridPane.columnIndex="1"/>
+                                <VBox spacing="10" GridPane.rowIndex="1">
+                                    <CampoFormulario fx:id="campoMarca" etiqueta="MARCA" prompt="Elige la marca"/>
+                                    <CampoFormulario fx:id="campoOtraMarca" etiqueta="¿CUÁL MARCA?" prompt="Escribe la marca"/>
+                                </VBox>
+                                <CampoFormulario fx:id="campoCategoria" etiqueta="CATEGORÍA" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <CampoFormulario fx:id="campoEstado" etiqueta="ESTADO" GridPane.rowIndex="2"/>
+                                <CampoFormulario fx:id="campoPrecio" etiqueta="PRECIO" prompt="209.900" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <CampoFormulario fx:id="campoStock" etiqueta="STOCK TOTAL (AUTOMÁTICO)" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+                            </GridPane>
+                            <VBox spacing="8">
+                                <Label text="DESCRIPCIÓN" styleClass="etiqueta-campo"/>
+                                <TextArea fx:id="areaDescripcion" promptText="Materiales, suela, ajuste y para qué ocasión sirve." wrapText="true"
+                                          prefRowCount="3" minHeight="96" styleClass="area-descripcion"/>
+                                <Label fx:id="errorDescripcion" styleClass="mensaje-error, error-campo" wrapText="true" visible="false" managed="false"/>
+                            </VBox>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="COLORES Y TALLAS" styleClass="titulo-chico, titulo-paso"/>
+                            <VBox spacing="10">
+                                <Label text="COLORES DISPONIBLES" styleClass="etiqueta-campo"/>
+                                <FlowPane fx:id="colores" hgap="8" vgap="8" rowValignment="CENTER"/>
+                                <Label fx:id="errorColores" styleClass="mensaje-error, error-campo" visible="false" managed="false"/>
+                            </VBox>
+                            <VBox spacing="10">
+                                <Label text="STOCK POR TALLA" styleClass="etiqueta-campo"/>
+                                <FlowPane fx:id="tallas" hgap="12" vgap="12"/>
+                                <Label fx:id="errorTallas" styleClass="mensaje-error, error-campo" visible="false" managed="false"/>
+                            </VBox>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <Label text="IMÁGENES" styleClass="titulo-chico, titulo-paso"/>
+                            <VBox fx:id="zonaFoto" styleClass="tarjeta-punteada, zona-foto-registro" alignment="CENTER">
+                                <Label text="ELIGE LA FOTO DEL PAR" styleClass="nombre-inventario"/>
+                                <Label text="PNG o JPG · fondo claro · se copia a la carpeta de imágenes" styleClass="texto-suave" wrapText="true"/>
+                                <Button fx:id="botonFoto" text="Elegir archivo" styleClass="boton-primario"/>
+                            </VBox>
+                            <HBox fx:id="miniaturas" spacing="14"/>
+                            <Label fx:id="errorImagen" styleClass="mensaje-error, error-campo" wrapText="true" visible="false" managed="false"/>
+                        </VBox>
+                    </VBox>
+                    <VBox spacing="24" minWidth="300" prefWidth="380" maxWidth="380">
+                        <VBox styleClass="tarjeta, tarjeta-resumen-admin">
+                            <Label text="VISTA PREVIA" styleClass="titulo-chico, titulo-paso"/>
+                            <VBox styleClass="tarjeta-previa">
+                                <StackPane fx:id="fotoPrevia" minHeight="190" prefHeight="190"/>
+                                <VBox spacing="4">
+                                    <padding>
+                                        <Insets top="12" left="16" right="16" bottom="14"/>
+                                    </padding>
+                                    <Label fx:id="nombrePrevio" styleClass="nombre-inventario" wrapText="true" minHeight="-Infinity"/>
+                                    <Label fx:id="coloresPrevios" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                    <Label fx:id="precioPrevio" styleClass="precio-tarjeta"/>
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-resumen-admin">
+                            <Label text="PUBLICACIÓN" styleClass="titulo-chico, titulo-paso"/>
+                            <HBox alignment="CENTER_LEFT" spacing="14">
+                                <VBox HBox.hgrow="ALWAYS" minWidth="0">
+                                    <Label text="Visible en la tienda" styleClass="texto, negrita"/>
+                                    <Label text="Aparece en el catálogo de clientes." styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorVisible"/>
+                            </HBox>
+                            <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                            <Button fx:id="botonGuardar" text="GUARDAR PRODUCTO →" styleClass="boton-primario" maxWidth="Infinity"/>
+                            <HBox alignment="CENTER">
+                                <Hyperlink fx:id="enlaceCancelar" text="Cancelar" styleClass="enlace-texto"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
