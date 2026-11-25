@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminBuscarController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="4">
+                    <Label text="Búsqueda global" styleClass="pastilla, pastilla-admin"/>
+                    <HBox alignment="BOTTOM_LEFT">
+                        <Label text="BUSCAR" styleClass="titulo-gigante, titulo-deseos"/>
+                        <Label text="." styleClass="titulo-gigante, titulo-deseos, texto-naranja"/>
+                    </HBox>
+                    <Label text="Encuentra productos, pedidos y clientes desde un solo lugar."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox fx:id="cajaBuscar" styleClass="buscador, buscador-grande" alignment="CENTER_LEFT">
+                    <TextField fx:id="campoBuscar" promptText="Nombre, SKU, pedido, cliente o correo" styleClass="buscador-campo, buscador-campo-grande"
+                               HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="botonBuscar" text="BUSCAR →" styleClass="boton-primario, boton-buscar-grande" minWidth="-Infinity"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <FlowPane fx:id="alcances" hgap="10" vgap="10" HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="infoBusqueda" styleClass="info-orden" minWidth="-Infinity"/>
+                </HBox>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox fx:id="secciones" spacing="22" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="876"/>
+                    <VBox spacing="22" minWidth="270" prefWidth="380" maxWidth="380">
+                        <VBox styleClass="tarjeta, tarjeta-resumen-admin">
+                            <HBox alignment="CENTER_LEFT">
+                                <Label text="FILTROS" styleClass="titulo"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Hyperlink fx:id="enlaceLimpiar" text="Limpiar" styleClass="enlace-texto"/>
+                            </HBox>
+                            <Label text="ESTADO" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <FlowPane fx:id="filtroEstado" hgap="8" vgap="8"/>
+                            <Label text="FECHA" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <FlowPane fx:id="filtroFecha" hgap="8" vgap="8"/>
+                            <Label text="CATEGORÍA" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <FlowPane fx:id="filtroCategoria" hgap="8" vgap="8"/>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-resumen-admin">
+                            <Label text="BÚSQUEDAS RECIENTES" styleClass="titulo-chico, titulo-paso" wrapText="true" minHeight="-Infinity"/>
+                            <VBox fx:id="recientes" spacing="8"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

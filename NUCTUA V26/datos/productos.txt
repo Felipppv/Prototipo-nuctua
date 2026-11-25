@@ -1,0 +1,12 @@
+NCT-001|Yeezy 350 V2 Sesame|Yeezy|Bajo|Arena · Goma|209900|nct-001.jpg|true|Tejido Primeknit gris arena con suela translúcida color goma. Liviano y cómodo para todo el día.|38:2,39:3,40:5,41:6,42:4,43:3,44:1
+NCT-002|Jordan 1 Low Travis Scott|Jordan|Bajo|Moca · Negro · Blanco|249900|nct-002.jpg|true|Jordan 1 Low con swoosh invertido, nobuck moca y suela vintage. La edición más buscada de la colección.|38:0,39:0,40:1,41:1,42:2,43:0,44:0
+NCT-003|Balenciaga Triple S Plata|Balenciaga|Bajo|Plata · Rojo|239900|nct-003.jpg|true|Silueta chunky de triple suela con capas metalizadas plata y detalles rojos.|39:0,40:0,41:0,42:0,43:0,44:0,45:0
+NCT-004|SB Dunk Low Pro Negro Goma|Nike SB|Bajo|Negro · Gris · Goma|149900|nct-004.jpg|true|Gamuza negra, swoosh gris y suela de goma. Pensado para el skate y la calle.|38:1,39:2,40:2,41:2,42:2,43:2,44:1
+NCT-005|Dunk Low UNLV|Nike|Bajo|Rojo · Gris · Blanco|139900|nct-005.jpg|true|Cuero rojo y gris con entresuela blanca. Un clásico universitario de los años 80.|37:2,38:2,39:3,40:3,41:3,42:3,43:2
+NCT-006|Jordan 4 White Cement|Jordan|Alto|Blanco · Gris · Negro|199900|nct-006.jpg|true|Cuero blanco con detalles cemento moteado y cámara de aire visible en el talón.|39:1,40:1,41:1,42:1,43:1,44:1,45:0
+NCT-007|Jordan 1 Mid Bred|Jordan|Alto|Negro · Rojo · Blanco|169900|nct-007.jpg|true|Caña media en cuero negro y rojo. La combinación que hizo historia en la cancha.|38:1,39:2,40:2,41:2,42:2,43:2,44:1
+NCT-008|SB Dunk High Doom|Nike SB|Alto|Negro · Gris · Rojo|179900|nct-008.jpg|true|Caña alta con textura de avestruz, cordones rojos y bordado en el talón.|38:1,39:1,40:1,41:1,42:1,43:1,44:1
+NCT-009|Jordan 11 Retro Bred|Jordan|Alto|Negro · Rojo · Blanco|189900|nct-009.jpg|true|Charol negro, malla balística y suela translúcida roja. Ícono de los playoffs.|40:1,41:0,42:1,43:1,44:0,45:0
+NCT-010|Off-White AF1 MCA Azul|Off-White|Bajo|Azul · Rojo|244900|nct-010.png|true|Air Force 1 azul universitario con textos de la colaboración y precinto rojo.|38:1,39:1,40:1,41:2,42:1,43:1,44:1
+NCT-011|Balenciaga Triple S Blanco|Balenciaga|Bajo|Blanco · Crema|234900|nct-011.jpg|true|Triple suela en tonos blanco y crema con malla transpirable y logo bordado.|39:0,40:1,41:1,42:1,43:1,44:1,45:0
+NCT-012|Balenciaga Arena Blanco|Balenciaga|Alto|Blanco|129900|nct-012.jpg|true|Bota de cuero arrugado blanco con argollas metálicas y suela plana.|39:1,40:2,41:2,42:2,43:1,44:1

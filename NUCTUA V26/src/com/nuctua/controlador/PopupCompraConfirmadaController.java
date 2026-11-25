@@ -1,0 +1,56 @@
+package com.nuctua.controlador;
+
+import com.nuctua.modelo.Pedido;
+import com.nuctua.servicio.PedidosServicio;
+import com.nuctua.util.Iconos;
+import com.nuctua.vista.Ventana;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+
+public class PopupCompraConfirmadaController extends PopupBase {
+
+    @FXML
+    private StackPane icono;
+    @FXML
+    private Label pastilla;
+    @FXML
+    private Label mensaje;
+    @FXML
+    private Label turno;
+
+    private boolean irAlHistorial;
+    private Pedido pedido;
+
+    @FXML
+    private void initialize() {
+        icono.getChildren().add(Iconos.okGrande(70));
+    }
+
+    public static boolean mostrar(Pedido pedido) {
+        PopupCompraConfirmadaController popup = Popup.abrir(Ventana.POPUP_COMPRA_CONFIRMADA);
+        popup.setPedido(pedido);
+        popup.mostrarYEsperar();
+        return popup.irAlHistorial;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+        pastilla.setText("Pedido #" + pedido.getCodigo() + " · " + pedido.getFechaTexto());
+        mensaje.setText(pedido.getTextoPago() + " Tu pedido ya aparece en tu historial.");
+        turno.setText(new PedidosServicio().describirTurno(pedido.getNumero()));
+        turno.setVisible(!turno.getText().isEmpty());
+        turno.setManaged(turno.isVisible());
+    }
+
+    @FXML
+    private void verFactura() {
+        PopupFacturaController.mostrar(pedido);
+    }
+
+    @FXML
+    private void verHistorial() {
+        irAlHistorial = true;
+        cerrar();
+    }
+}
