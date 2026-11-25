@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import com.nuctua.vista.CampoFormulario?>
+<?import com.nuctua.vista.Interruptor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.PerfilUsuarioController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraCliente.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto"/>
+                <VBox spacing="10">
+                    <Label fx:id="saludo" styleClass="pastilla, pastilla-saludo"/>
+                    <HBox alignment="BOTTOM_LEFT">
+                        <Label text="MI PERFIL" styleClass="titulo-gigante, titulo-deseos"/>
+                        <Label text="." styleClass="titulo-gigante, titulo-deseos, texto-naranja"/>
+                    </HBox>
+                    <Label text="Tus datos, tus direcciones y tus preferencias en un solo lugar."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox spacing="32" alignment="TOP_LEFT">
+                    <VBox styleClass="tarjeta, tarjeta-cuenta" minWidth="320" prefWidth="400" maxWidth="400" maxHeight="-Infinity">
+                        <HBox spacing="16" alignment="CENTER_LEFT">
+                            <StackPane fx:id="avatar"/>
+                            <VBox spacing="5" alignment="CENTER_LEFT" minWidth="0" HBox.hgrow="ALWAYS">
+                                <Label fx:id="nombrePerfil" styleClass="nombre-perfil" wrapText="true" minHeight="-Infinity"/>
+                                <Label fx:id="correoPerfil" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                <Label fx:id="estadoPerfil" styleClass="pastilla-oscura, pastilla-estado-cuenta"/>
+                            </VBox>
+                        </HBox>
+                        <Region styleClass="separador"/>
+                        <GridPane styleClass="caja-cifras">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="33.3" halignment="CENTER"/>
+                                <ColumnConstraints percentWidth="33.3" halignment="CENTER"/>
+                                <ColumnConstraints percentWidth="33.3" halignment="CENTER"/>
+                            </columnConstraints>
+                            <Label text="PEDIDOS" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <Label text="PARES" styleClass="etiqueta-campo, texto-suave-grande" GridPane.columnIndex="1"/>
+                            <Label text="DESEOS" styleClass="etiqueta-campo, texto-suave-grande" GridPane.columnIndex="2"/>
+                            <Label fx:id="cifraPedidos" styleClass="cifra-perfil" GridPane.rowIndex="1"/>
+                            <Label fx:id="cifraPares" styleClass="cifra-perfil" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Label fx:id="cifraDeseos" styleClass="cifra-perfil" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        </GridPane>
+                        <VBox spacing="10">
+                            <Button fx:id="menuDatos" text="Mis datos" styleClass="boton-menu-perfil, boton-menu-activo" maxWidth="Infinity" onAction="#irADatos"/>
+                            <Button fx:id="menuDirecciones" text="Direcciones" styleClass="boton-menu-perfil" maxWidth="Infinity" onAction="#irADirecciones"/>
+                            <Button fx:id="menuPedidos" text="Mis pedidos" styleClass="boton-menu-perfil" maxWidth="Infinity" onAction="#irAPedidos"/>
+                            <Button fx:id="menuDeseos" text="Mi lista de deseos" styleClass="boton-menu-perfil" maxWidth="Infinity" onAction="#irADeseos"/>
+                        </VBox>
+                        <Hyperlink text="Cerrar sesión" styleClass="enlace-texto" onAction="#cerrarSesion"/>
+                    </VBox>
+                    <VBox spacing="28" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="860">
+                        <VBox fx:id="tarjetaDatos" styleClass="tarjeta, tarjeta-pago">
+                            <VBox spacing="2">
+                                <Label text="DATOS PERSONALES" styleClass="titulo-chico, titulo-paso"/>
+                                <Label text="Mantén tu información al día para que tus pedidos lleguen sin problema."
+                                       styleClass="texto, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                            </VBox>
+                            <GridPane hgap="20" vgap="20">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                <CampoFormulario fx:id="campoNombre" etiqueta="NOMBRE" prompt="Tu nombre"/>
+                                <CampoFormulario fx:id="campoApellido" etiqueta="APELLIDO" prompt="Tu apellido" GridPane.columnIndex="1"/>
+                                <CampoFormulario fx:id="campoCorreo" etiqueta="CORREO ELECTRÓNICO" GridPane.rowIndex="1"/>
+                                <CampoFormulario fx:id="campoTelefono" etiqueta="TELÉFONO" prompt="300 456 7812" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <CampoFormulario fx:id="campoCumpleanos" etiqueta="CUMPLEAÑOS" prompt="14 / 03 / 2003" GridPane.rowIndex="2"/>
+                                <CampoFormulario fx:id="campoDocumento" etiqueta="DOCUMENTO" prompt="1.067.234.551" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            </GridPane>
+                            <Label fx:id="mensajeDatos" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                            <HBox spacing="16">
+                                <Button text="GUARDAR CAMBIOS" styleClass="boton-primario, boton-cuadrado" minWidth="-Infinity" onAction="#guardar"/>
+                                <Button text="CAMBIAR CONTRASEÑA" styleClass="boton-secundario, boton-cuadrado" minWidth="-Infinity" onAction="#cambiarContrasena"/>
+                            </HBox>
+                        </VBox>
+                        <VBox fx:id="tarjetaDirecciones" styleClass="tarjeta, tarjeta-pago">
+                            <Label text="MIS DIRECCIONES" styleClass="titulo-chico, titulo-paso"/>
+                            <Label fx:id="sinDirecciones" text="Aún no tienes direcciones. Agrega una para comprar más rápido."
+                                   styleClass="texto, texto-suave-grande" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                            <GridPane fx:id="direcciones" hgap="20" vgap="20">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50" fillWidth="true"/>
+                                    <ColumnConstraints percentWidth="50" fillWidth="true"/>
+                                </columnConstraints>
+                            </GridPane>
+                            <Button fx:id="botonAgregarDireccion" text="+ Agregar dirección" styleClass="boton-agregar-direccion" maxWidth="Infinity" onAction="#agregarDireccion"/>
+                        </VBox>
+                        <VBox styleClass="tarjeta, tarjeta-pago">
+                            <VBox spacing="2">
+                                <Label text="PREFERENCIAS" styleClass="titulo-chico, titulo-paso"/>
+                                <Label text="Personaliza lo que ves en nuctua." styleClass="texto, texto-suave-grande"/>
+                            </VBox>
+                            <VBox spacing="8">
+                                <Label text="TALLA HABITUAL" styleClass="etiqueta-campo"/>
+                                <FlowPane fx:id="tallas" hgap="10" vgap="10"/>
+                            </VBox>
+                            <VBox spacing="8">
+                                <Label text="ME INTERESA" styleClass="etiqueta-campo"/>
+                                <FlowPane fx:id="intereses" hgap="10" vgap="10"/>
+                            </VBox>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Avisos de novedades" styleClass="texto, negrita"/>
+                                    <Label text="Entérate cuando lleguen pares nuevos." styleClass="texto-suave"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorNovedades"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="16">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Ofertas por correo" styleClass="texto, negrita"/>
+                                    <Label text="Recibe descuentos y lanzamientos." styleClass="texto-suave"/>
+                                </VBox>
+                                <Interruptor fx:id="interruptorOfertas"/>
+                            </HBox>
+                            <Label fx:id="mensajePreferencias" visible="false" managed="false"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-64" right="-64" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
