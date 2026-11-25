@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import com.nuctua.vista.Interruptor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminStockTallaController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="4">
+                    <Label fx:id="sello" text="Editando" styleClass="pastilla, pastilla-admin, sello-inclinado"/>
+                    <Label fx:id="titulo" styleClass="titulo-gigante, titulo-producto-admin" wrapText="true" minHeight="-Infinity"/>
+                    <Label text="Ajusta el stock por talla y si el modelo se ve en la tienda."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox spacing="20" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="912">
+                        <VBox styleClass="tarjeta, tarjeta-stock">
+                            <HBox alignment="CENTER_LEFT" spacing="6">
+                                <Label text="STOCK POR TALLA" styleClass="titulo-chico, titulo-paso"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Label text="Total:" styleClass="texto, texto-suave-grande"/>
+                                <Label fx:id="textoTotal" styleClass="texto, negrita"/>
+                            </HBox>
+                            <FlowPane fx:id="tallas" hgap="12" vgap="12"/>
+                        </VBox>
+                        <HBox styleClass="tarjeta-punteada, carrito-falta" alignment="CENTER_LEFT" spacing="16">
+                            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                <Label text="¿VISIBLE EN LA TIENDA?" styleClass="titulo-chico"/>
+                                <Label text="Si lo ocultas, el par deja de aparecer en el catálogo de clientes." styleClass="texto, texto-suave-grande"
+                                       wrapText="true" minHeight="-Infinity"/>
+                            </VBox>
+                            <HBox styleClass="caja-visible" spacing="10" alignment="CENTER" minWidth="-Infinity">
+                                <Interruptor fx:id="interruptorVisible" styleClass="interruptor-naranja"/>
+                                <Label fx:id="textoVisible" styleClass="texto, negrita" minWidth="50"/>
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                    <VBox styleClass="tarjeta, tarjeta-resumen-admin" minWidth="250" prefWidth="280" maxWidth="280" maxHeight="-Infinity">
+                        <Label text="RESUMEN" styleClass="titulo"/>
+                        <HBox alignment="CENTER">
+                            <StackPane fx:id="foto" styleClass="foto-resumen" minWidth="160" maxWidth="160" minHeight="120" maxHeight="120"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Estado" styleClass="texto, texto-suave-grande"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <StackPane fx:id="cajaEstado"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Visibilidad" styleClass="texto, texto-suave-grande"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="visibilidad" styleClass="texto, negrita"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Precio" styleClass="texto, texto-suave-grande"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="precio" styleClass="texto, negrita"/>
+                        </HBox>
+                        <Region styleClass="separador"/>
+                        <HBox alignment="BASELINE_LEFT" spacing="10">
+                            <Label text="TOTAL" styleClass="titulo-total-admin"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="total" styleClass="cifra-cambios"/>
+                            <Label fx:id="etiquetaPares" styleClass="titulo-total-admin"/>
+                        </HBox>
+                        <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" minHeight="-Infinity"/>
+                        <Button fx:id="botonGuardar" text="GUARDAR CAMBIOS" styleClass="boton-primario, boton-cuadrado" maxWidth="Infinity"/>
+                        <HBox alignment="CENTER">
+                            <Hyperlink fx:id="enlaceCancelar" text="Cancelar y volver" styleClass="enlace-texto"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

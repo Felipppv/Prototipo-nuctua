@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.vista.CampoFormulario?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupNuevoClienteController" styleClass="capa-popup">
+    <VBox styleClass="modal" spacing="14" maxWidth="600" prefWidth="600" maxHeight="-Infinity">
+        <Label text="AGREGA UN CLIENTE" styleClass="modal-titulo"/>
+        <Label text="Crearemos su cuenta. La contraseña la elige el cliente con “¿Olvidaste tu contraseña?”." styleClass="texto"
+               wrapText="true" minHeight="-Infinity"/>
+        <CampoFormulario fx:id="campoNombre" etiqueta="NOMBRE COMPLETO" prompt="Nombre y apellido"/>
+        <CampoFormulario fx:id="campoCorreo" etiqueta="CORREO ELECTRÓNICO" prompt="cliente@correo.com"/>
+        <CampoFormulario fx:id="campoTelefono" etiqueta="TELÉFONO (OPCIONAL)" prompt="300 456 7812"/>
+        <CampoFormulario fx:id="campoCiudad" etiqueta="CIUDAD (OPCIONAL)" prompt="Montería"/>
+        <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+        <HBox spacing="14" alignment="CENTER_LEFT">
+            <Button text="AGREGAR CLIENTE" styleClass="boton-primario" defaultButton="true" onAction="#agregar"/>
+            <Button text="CANCELAR" styleClass="boton-secundario" cancelButton="true" onAction="#cerrar"/>
+        </HBox>
+    </VBox>
+</StackPane>
