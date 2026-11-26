@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.TituloAjustable?>
+<?import com.nuctua.util.CampoContrasena?>
+<?import com.nuctua.util.Cinta?>
+<?import com.nuctua.util.Huellas?>
+<?import com.nuctua.util.SelloCircular?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.RegistroController"
+            fitToWidth="true" fitToHeight="true" styleClass="scroll-pagina">
+    <HBox styleClass="pagina-acceso" spacing="56" minHeight="840">
+        <padding>
+            <Insets top="24" right="48" bottom="24" left="24"/>
+        </padding>
+        <VBox fx:id="panel" styleClass="panel-login" spacing="16" prefWidth="580" minWidth="520" maxWidth="620">
+            <Label text="NUCTUA" styleClass="titulo-chico"/>
+            <Region minHeight="24"/>
+            <VBox spacing="-20">
+                <TituloAjustable text="TU PRIMER PASO," tamano="74" styleClass="titulo-login"/>
+                <HBox spacing="18" alignment="CENTER_LEFT">
+                    <Label text="CON" styleClass="titulo-login"/>
+                    <StackPane styleClass="marco-login" rotate="-1.5">
+                        <Label text="NUCTUA." styleClass="titulo-login"/>
+                    </StackPane>
+                </HBox>
+            </VBox>
+            <Label text="Crea tu cuenta y guarda tus favoritos, pedidos y tallas en un instante."
+                   wrapText="true" maxWidth="330" minHeight="-Infinity" styleClass="subtitulo"/>
+            <StackPane alignment="BOTTOM_RIGHT" minHeight="210" prefHeight="250">
+                <Huellas/>
+                <SelloCircular/>
+            </StackPane>
+            <Cinta>
+                <VBox.margin>
+                    <Insets left="-44" right="-44"/>
+                </VBox.margin>
+            </Cinta>
+            <Region VBox.vgrow="ALWAYS"/>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets bottom="34"/>
+                </padding>
+                <Region minWidth="34" minHeight="2" maxHeight="2" style="-fx-background-color: #1B1410;"/>
+                <Label text="Diseño, comodidad y calzado pensado para ti." styleClass="texto"/>
+            </HBox>
+        </VBox>
+        <VBox HBox.hgrow="ALWAYS" spacing="0">
+            <HBox alignment="CENTER_RIGHT" spacing="6">
+                <padding>
+                    <Insets top="18" right="24"/>
+                </padding>
+                <Hyperlink fx:id="enlaceAdmin" text="ADMIN" styleClass="enlace-texto" onAction="#irALoginAdmin"/>
+            </HBox>
+            <StackPane VBox.vgrow="ALWAYS" alignment="CENTER_LEFT">
+                <VBox styleClass="columna-formulario">
+                    <Label text="¡Bienvenido al equipo!" styleClass="pastilla" rotate="-2"/>
+                    <HBox>
+                        <Label text="CREA TU CUENTA" styleClass="titulo-acceso" style="-fx-font-size: 66px;" minWidth="-Infinity"/>
+                        <Label text="." styleClass="titulo-acceso, punto-naranja" style="-fx-font-size: 66px;"/>
+                    </HBox>
+                    <Label text="Regístrate para guardar tus favoritos, seguir tus pedidos y comprar más rápido."
+                           wrapText="true" minHeight="-Infinity" styleClass="texto"/>
+                    <VBox spacing="8">
+                        <Label text="NOMBRE COMPLETO" styleClass="etiqueta-campo"/>
+                        <TextField fx:id="campoNombre" promptText="Tu nombre y apellido" styleClass="campo"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="CORREO ELECTRÓNICO" styleClass="etiqueta-campo"/>
+                        <TextField fx:id="campoCorreo" promptText="tu@correo.com" styleClass="campo"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="CONTRASEÑA" styleClass="etiqueta-campo"/>
+                        <CampoContrasena fx:id="campoContrasena" prompt="Mínimo 8 caracteres"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="CONFIRMAR CONTRASEÑA" styleClass="etiqueta-campo"/>
+                        <CampoContrasena fx:id="campoConfirmacion" prompt="Repite tu contraseña"/>
+                    </VBox>
+                    <CheckBox fx:id="checkTerminos" text="Acepto los términos y condiciones" styleClass="check"/>
+                    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" visible="false" managed="false"/>
+                    <Button fx:id="botonCrear" text="CREAR CUENTA" maxWidth="Infinity"
+                            styleClass="boton-primario" defaultButton="true"/>
+                    <HBox spacing="5" alignment="CENTER">
+                        <Label text="¿Ya tienes cuenta?" styleClass="texto"/>
+                        <Hyperlink text="Inicia sesión" styleClass="enlace-texto" onAction="#irALogin"/>
+                    </HBox>
+                    <HBox fx:id="filaSeguridad" spacing="8" alignment="CENTER">
+                        <Label text="Tus datos, siempre protegidos." styleClass="texto-suave"/>
+                    </HBox>
+                </VBox>
+            </StackPane>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Tu cuenta. Tus pares. Tu ritmo." styleClass="pie"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Español - ES" styleClass="pie"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</ScrollPane>

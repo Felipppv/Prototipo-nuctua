@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.DetalleProductoController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraCliente.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido">
+                <Hyperlink fx:id="enlaceVolver" text="← Volver al catálogo" styleClass="enlace-texto" onAction="#volver"/>
+                <HBox spacing="48" alignment="TOP_LEFT">
+                    <VBox spacing="14">
+                        <StackPane fx:id="foto" styleClass="foto-detalle" minWidth="560" maxWidth="560" minHeight="500" maxHeight="500">
+                            <Label fx:id="etiqueta" styleClass="pastilla" StackPane.alignment="TOP_LEFT">
+                                <StackPane.margin>
+                                    <Insets top="8" left="8"/>
+                                </StackPane.margin>
+                            </Label>
+                        </StackPane>
+                        <HBox fx:id="galeria" spacing="10" visible="false" managed="false"/>
+                    </VBox>
+                    <VBox spacing="18" HBox.hgrow="ALWAYS">
+                        <Label fx:id="chipSku" styleClass="pastilla-oscura, chip-sku"/>
+                        <Label fx:id="nombre" styleClass="nombre-detalle" wrapText="true" minHeight="-Infinity"/>
+                        <FlowPane hgap="16" vgap="8" alignment="CENTER_LEFT" rowValignment="CENTER">
+                            <Label fx:id="precio" styleClass="precio-grande" minWidth="-Infinity"/>
+                            <Label fx:id="estadoStock" styleClass="pastilla-oscura" minWidth="-Infinity"/>
+                        </FlowPane>
+                        <HBox fx:id="filaColores" spacing="8" alignment="CENTER_LEFT"/>
+                        <Label fx:id="descripcion" styleClass="subtitulo" wrapText="true" minHeight="-Infinity"/>
+                        <Region styleClass="separador"/>
+                        <Label text="ELIGE TU TALLA" styleClass="etiqueta-campo"/>
+                        <FlowPane fx:id="panelTallas" hgap="10" vgap="10"/>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label fx:id="pastillaStock" styleClass="pastilla" minWidth="-Infinity"/>
+                            <Label fx:id="textoStock" styleClass="texto" wrapText="true" minHeight="-Infinity" minWidth="0"/>
+                        </HBox>
+                        <FlowPane hgap="16" vgap="12" alignment="CENTER_LEFT">
+                            <Button fx:id="botonCarrito" text="AGREGAR AL CARRITO" styleClass="boton-primario" minWidth="-Infinity"/>
+                            <Button fx:id="botonDeseos" text="AGREGAR A DESEOS" styleClass="boton-secundario" minWidth="-Infinity"/>
+                        </FlowPane>
+                        <Label fx:id="mensajeSeleccion" wrapText="true" minHeight="-Infinity" visible="false" managed="false"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="12" alignment="BASELINE_LEFT">
+                    <padding>
+                        <Insets top="12"/>
+                    </padding>
+                    <Label text="VISTOS" styleClass="titulo"/>
+                    <Label text="RECIENTEMENTE" styleClass="titulo, texto-naranja"/>
+                    <Label text="El último par que abriste aparece primero." styleClass="texto"/>
+                </HBox>
+                <FlowPane fx:id="panelVistos" hgap="22" vgap="22"/>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-64" right="-64" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminClientesController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="4">
+                    <Label fx:id="sello" styleClass="pastilla, pastilla-admin"/>
+                    <HBox alignment="BOTTOM_LEFT">
+                        <Label text="CLIENTES" styleClass="titulo-gigante, titulo-deseos"/>
+                        <Label text="." styleClass="titulo-gigante, titulo-deseos, texto-naranja"/>
+                    </HBox>
+                    <Label text="Consulta quién compra, cuántos pares lleva cada uno y escríbeles cuando lo necesites."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox fx:id="metricas" spacing="16"/>
+                <HBox fx:id="aviso" styleClass="aviso-deseos" visible="false" managed="false">
+                    <Label fx:id="textoAviso" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                </HBox>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox spacing="16" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="876">
+                        <FlowPane fx:id="filtros" hgap="8" vgap="10">
+                            <HBox styleClass="buscador-admin" alignment="CENTER_LEFT" spacing="10" prefWidth="240">
+                                <StackPane fx:id="iconoBuscar"/>
+                                <TextField fx:id="campoBuscar" promptText="Buscar cliente o correo" styleClass="buscador-campo" HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                        </FlowPane>
+                        <VBox styleClass="tarjeta, tabla-admin">
+                            <GridPane fx:id="encabezado" styleClass="encabezado-admin" hgap="8"/>
+                            <VBox fx:id="filas"/>
+                            <HBox styleClass="pie-admin" alignment="CENTER_LEFT" spacing="8">
+                                <Label fx:id="textoPagina" styleClass="texto-suave"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button fx:id="botonAnterior" text="Anterior" styleClass="chip-perfil" minWidth="-Infinity"/>
+                                <Button fx:id="botonSiguiente" text="Siguiente" styleClass="chip-perfil" minWidth="-Infinity"/>
+                            </HBox>
+                        </VBox>
+                        <HBox styleClass="tarjeta-punteada, carrito-falta" alignment="CENTER_LEFT" spacing="16">
+                            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                <Label text="¿VENDISTE EN TIENDA O POR WHATSAPP?" styleClass="titulo-chico" wrapText="true" minHeight="-Infinity"/>
+                                <Label text="Agrega un cliente a mano para registrar sus pedidos." styleClass="texto, texto-suave-grande"
+                                       wrapText="true" minHeight="-Infinity"/>
+                            </VBox>
+                            <Button fx:id="botonAgregar" text="AGREGAR CLIENTE" styleClass="boton-secundario" minWidth="-Infinity"/>
+                        </HBox>
+                    </VBox>
+                    <VBox styleClass="tarjeta, tarjeta-resumen-admin" minWidth="280" prefWidth="380" maxWidth="380" maxHeight="-Infinity">
+                        <Label text="PERFIL" styleClass="titulo"/>
+                        <VBox fx:id="panelVacio">
+                            <Label text="Elige un cliente para ver su perfil." styleClass="texto, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                        </VBox>
+                        <VBox fx:id="panelPerfil" spacing="14">
+                            <HBox spacing="14" alignment="CENTER_LEFT">
+                                <StackPane fx:id="avatar"/>
+                                <VBox spacing="4" alignment="CENTER_LEFT" minWidth="0" HBox.hgrow="ALWAYS">
+                                    <Label fx:id="nombrePerfil" styleClass="nombre-perfil" wrapText="true" minHeight="-Infinity"/>
+                                    <Label fx:id="correoPerfil" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                    <StackPane fx:id="estadoPerfil" alignment="CENTER_LEFT"/>
+                                </VBox>
+                            </HBox>
+                            <Region styleClass="separador"/>
+                            <GridPane hgap="12" vgap="2">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                <Label text="TELÉFONO" styleClass="etiqueta-campo, texto-suave-grande"/>
+                                <Label text="CLIENTE DESDE" styleClass="etiqueta-campo, texto-suave-grande" GridPane.columnIndex="1"/>
+                                <Label fx:id="telefonoPerfil" styleClass="texto, negrita" GridPane.rowIndex="1"/>
+                                <Label fx:id="desdePerfil" styleClass="texto, negrita" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </GridPane>
+                            <VBox spacing="2">
+                                <Label text="DIRECCIÓN DE ENVÍO" styleClass="etiqueta-campo, texto-suave-grande"/>
+                                <Label fx:id="direccionPerfil" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                            </VBox>
+                            <GridPane styleClass="caja-cifras">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="29" halignment="CENTER"/>
+                                    <ColumnConstraints percentWidth="26" halignment="CENTER"/>
+                                    <ColumnConstraints percentWidth="45" halignment="CENTER"/>
+                                </columnConstraints>
+                                <Label text="PEDIDOS" styleClass="etiqueta-campo, texto-suave-grande"/>
+                                <Label text="PARES" styleClass="etiqueta-campo, texto-suave-grande" GridPane.columnIndex="1"/>
+                                <Label text="GASTADO" styleClass="etiqueta-campo, texto-suave-grande" GridPane.columnIndex="2"/>
+                                <Label fx:id="cifraPedidos" styleClass="cifra-perfil, cifra-chica" GridPane.rowIndex="1"/>
+                                <Label fx:id="cifraPares" styleClass="cifra-perfil, cifra-chica" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label fx:id="cifraGastado" styleClass="cifra-perfil, cifra-chica" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                            </GridPane>
+                            <Label text="ÚLTIMOS PEDIDOS" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <VBox fx:id="ultimosPedidos" spacing="8"/>
+                            <Label text="EN SUS FAVORITOS" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <VBox fx:id="favoritos" spacing="8"/>
+                            <Button fx:id="botonPedidos" text="VER SUS PEDIDOS" styleClass="boton-primario, boton-cuadrado" maxWidth="Infinity"/>
+                            <HBox alignment="CENTER">
+                                <Hyperlink fx:id="enlaceCorreo" text="Copiar correo" styleClass="enlace-texto"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

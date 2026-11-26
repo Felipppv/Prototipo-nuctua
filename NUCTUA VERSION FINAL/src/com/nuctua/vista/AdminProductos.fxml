@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.nuctua.util.Cinta?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nuctua.controlador.AdminProductosController" styleClass="pagina">
+    <top>
+        <fx:include fx:id="barra" source="BarraAdmin.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-pagina">
+            <VBox styleClass="contenido, contenido-admin">
+                <Hyperlink fx:id="enlaceVolver" styleClass="enlace-texto, enlace-volver"/>
+                <VBox spacing="4">
+                    <Label fx:id="sello" styleClass="pastilla, pastilla-admin"/>
+                    <HBox alignment="BOTTOM_LEFT">
+                        <Label text="PRODUCTOS" styleClass="titulo-gigante, titulo-deseos"/>
+                        <Label text="." styleClass="titulo-gigante, titulo-deseos, texto-naranja"/>
+                    </HBox>
+                    <Label text="Registra, edita, oculta o elimina pares. Los cambios se guardan en el archivo de productos."
+                           styleClass="subtitulo, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                </VBox>
+                <HBox fx:id="metricas" spacing="16"/>
+                <HBox fx:id="aviso" styleClass="aviso-deseos" visible="false" managed="false">
+                    <Label fx:id="textoAviso" styleClass="texto, negrita" wrapText="true" minHeight="-Infinity"/>
+                </HBox>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <VBox spacing="16" HBox.hgrow="ALWAYS" minWidth="0" prefWidth="876">
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <HBox styleClass="buscador-admin" alignment="CENTER_LEFT" spacing="10" HBox.hgrow="ALWAYS" minWidth="180">
+                                <StackPane fx:id="iconoBuscar"/>
+                                <TextField fx:id="campoBuscar" promptText="Buscar producto o SKU" styleClass="buscador-campo" HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                            <Button fx:id="botonRegistrar" text="+ REGISTRAR PRODUCTO" styleClass="boton-peligro" minWidth="-Infinity"/>
+                        </HBox>
+                        <FlowPane fx:id="filtros" hgap="8" vgap="10"/>
+                        <VBox styleClass="tarjeta, tabla-admin">
+                            <GridPane fx:id="encabezado" styleClass="encabezado-admin" hgap="8"/>
+                            <VBox fx:id="filas"/>
+                            <HBox styleClass="pie-admin" alignment="CENTER_LEFT" spacing="8">
+                                <Label fx:id="textoPagina" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button fx:id="botonAnterior" text="Anterior" styleClass="chip-perfil" minWidth="-Infinity"/>
+                                <Button fx:id="botonSiguiente" text="Siguiente" styleClass="chip-perfil" minWidth="-Infinity"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                    <VBox styleClass="tarjeta, tarjeta-resumen-admin" minWidth="300" prefWidth="380" maxWidth="380" maxHeight="-Infinity">
+                        <Label text="DETALLE" styleClass="titulo"/>
+                        <VBox fx:id="panelVacio">
+                            <Label text="Elige un producto para ver su detalle." styleClass="texto, texto-suave-grande" wrapText="true" minHeight="-Infinity"/>
+                        </VBox>
+                        <VBox fx:id="panelDetalle" spacing="12">
+                            <StackPane fx:id="foto" styleClass="foto-resumen" minHeight="188" maxHeight="188"/>
+                            <VBox spacing="2">
+                                <Label fx:id="nombre" styleClass="nombre-perfil" wrapText="true" minHeight="-Infinity"/>
+                                <Label fx:id="datos" styleClass="texto-suave" wrapText="true" minHeight="-Infinity"/>
+                            </VBox>
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <Label fx:id="precio" styleClass="precio-detalle-admin" minWidth="-Infinity"/>
+                                <StackPane fx:id="estado" alignment="CENTER_LEFT"/>
+                            </HBox>
+                            <Region styleClass="separador"/>
+                            <Label text="STOCK POR TALLA" styleClass="etiqueta-campo, texto-suave-grande"/>
+                            <FlowPane fx:id="tallas" styleClass="caja-cifras" hgap="4" vgap="6" alignment="CENTER"/>
+                            <Button fx:id="botonEditar" text="EDITAR PRODUCTO →" styleClass="boton-primario" maxWidth="Infinity"/>
+                            <VBox spacing="6" alignment="CENTER">
+                                <Hyperlink fx:id="enlaceStock" text="Ajustar stock por talla" styleClass="enlace-texto"/>
+                                <Hyperlink fx:id="enlaceVisible" styleClass="enlace-texto"/>
+                                <Hyperlink fx:id="enlaceEliminar" text="Eliminar producto" styleClass="enlace-texto"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <Cinta>
+                    <VBox.margin>
+                        <Insets left="-80" right="-80" bottom="-48" top="24"/>
+                    </VBox.margin>
+                </Cinta>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

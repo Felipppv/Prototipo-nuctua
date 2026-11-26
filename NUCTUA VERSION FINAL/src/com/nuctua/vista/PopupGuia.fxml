@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nuctua.controlador.PopupGuiaController" styleClass="capa-popup">
+    <VBox styleClass="modal, modal-factura" maxWidth="660" prefWidth="660" maxHeight="-Infinity">
+        <HBox alignment="CENTER_LEFT" spacing="14">
+            <Label text="GUÍA DE ENVÍO" styleClass="modal-titulo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="numero" styleClass="pastilla-borde, pastilla-pedido" minWidth="-Infinity"/>
+        </HBox>
+        <TextArea fx:id="contenido" editable="false" prefHeight="400" styleClass="area-descripcion, area-guia"/>
+        <Label fx:id="mensaje" styleClass="mensaje-ok" wrapText="true" minHeight="-Infinity"/>
+        <HBox spacing="14" alignment="CENTER_LEFT">
+            <Button text="IMPRIMIR" styleClass="boton-primario" minWidth="-Infinity" onAction="#imprimir"/>
+            <Button text="GUARDAR COPIA" styleClass="boton-secundario" minWidth="-Infinity" onAction="#guardarCopia"/>
+            <Button text="CERRAR" styleClass="boton-secundario" minWidth="-Infinity" cancelButton="true" onAction="#cerrar"/>
+        </HBox>
+    </VBox>
+</StackPane>
